@@ -6,8 +6,11 @@ const app = express();
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 
-const router = require('./routes/index');
+const indexRouter = require('./routes/index');
+const authorRouter = require('./routes/authors');
 
+app.use(express.json());
+app.use(express.urlencoded({limit: '10mb', extended: false}));
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 app.set('layout', './layouts/layout')
@@ -26,7 +29,9 @@ db.once('open', function() {
 
 
 
-app.use('/', router);
+app.use('/', indexRouter);
+
+app.use('/authors', authorRouter);
 
 // listen
 const PORT = process.env.PORT || 5000;

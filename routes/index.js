@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 // @route GET 
-// @desc 
+// @desc /
 // @access Public 
 router.get('/', (req, res) => {
     res.render('index'); 
