@@ -1,12 +1,30 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+const Book = require("./book.js");
 
 const authorSchema = new mongoose.Schema({
     name: {
-        type: String, 
-        required: true
-    }
-})
+        type: String,
+        required: true,
+    },
+});
 
-const Author = mongoose.model('Author', authorSchema);
+authorSchema.pre("deleteOne", async function (next) {
+    try {
+        const query = this.getFilter();
+        const hasBook = await Book.exists({ author: query._id });
+  
+        if (hasBook) {
+            next(new Error("This author still has books."));
+        } else {
+            next();
+        }
+    } catch (err) {
+        next(err);
+    }
+});
+
+
+
+const Author = mongoose.model("Author", authorSchema);
 
 module.exports = Author;
