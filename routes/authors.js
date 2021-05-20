@@ -33,7 +33,7 @@ router.post("/", (req, res) => {
         .save()
         .then((author) => {
             // res.redirect(`authors/${newAuthor.id}`);
-            res.redirect(`authors/`);
+            res.redirect(`authors`);
         })
         .catch((err) => {
             res.render("authors/new", {
