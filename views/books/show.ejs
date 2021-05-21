@@ -1,0 +1,36 @@
+<h2><%= book.title %></h2>
+<div>
+    <img
+        src="<%= book.coverImagePath %> "
+        alt="Book Cover"
+        height="150"
+        width="100"
+    />
+    <a href="/books/<%= book._id %>/edit">Edit</a>
+    <%- include('../partials/deleteForm.ejs', {url: `/books/${book._id}`}) %> 
+    <a href="/authors/<%= book.author._id %>">View Author</a>
+</div>
+<div>
+    <div>
+        Author:
+        <span><%= book.author.name %> </span>
+    </div>
+    <div>
+        Publish Date:
+        <span>
+            <%= book.publishedDate.toLocaleDateString('en-US', {
+            weekday:'short', year: 'numeric', month: 'short', day: 'numeric' })
+            %>
+        </span>
+    </div>
+
+    <div>
+        Page Count:
+        <span><%= book.pageCount %> </span>
+    </div>
+
+    <div>
+        Description:
+        <p><%= book.description %></p>
+    </div>
+</div>
