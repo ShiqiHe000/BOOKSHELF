@@ -18,7 +18,7 @@ body {
 }
 
 html {
-    height: 100%;
+    min-height: 100%;
     background-image: linear-gradient(
         to right,
         #eea2a2 0%,
@@ -32,7 +32,7 @@ html {
 }
 
 body {
-    height: 100%;
+    min-height: 100%;
     font-family: $font-classic;
 
     display: flex;
@@ -70,8 +70,11 @@ body {
 // home page
 @import "home";
 
-// books page
+// books main page
 @import "books";
+
+// show a specific book
+@import "showBook";
 
 // new author
 @import "newAuthor";

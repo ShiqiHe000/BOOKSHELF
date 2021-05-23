@@ -18,6 +18,7 @@ a {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .header-logo {
@@ -57,6 +58,7 @@ a {
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .header-link {

@@ -1,0 +1,25 @@
+.book-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.book-container {
+    margin: 1rem 0;
+}
+
+.book-cover {
+    height: $img-small-height;
+    width: $img-small-width;
+}
+
+.show-book-button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1rem 0;
+
+    & > * {
+        margin-bottom: 1rem;
+    }
+}
+

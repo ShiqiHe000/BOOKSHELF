@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
     try {
         const books = await Book.find({})
             .sort({ createAt: "desc" })
-            .limit(6)
+            .limit(3)
             .exec();
         res.render("index", { books });
     } catch (err) {
