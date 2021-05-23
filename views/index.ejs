@@ -1,14 +1,24 @@
-<h2>Recently Added</h2>
-<% books.forEach(book => { %>
-<div>
-    <a href="/books/<%= book._id %>">
-        <img
-            src="<%= book.coverImagePath %>"
-            alt="recent book"
-            width="100"
-            height="150"
-        />
-    </a>
-    <div><%= book.title %></div>
+<div class="inner-container">
+    <div class="bg-title-small">Never Miss Ours</div>
+    <div class="bg-title-large">
+        2021's BEST PICKS
+    </div>
+
+    <div class="book-grid">
+        <% books.forEach(book => { %>
+        <div class="bp-cover-container">
+            <a href="/books/<%= book._id %>" >
+                <img
+                    src="<%= book.coverImagePath %>"
+                    alt="recent book"
+                    class="bp-book-cover"
+                />
+            </a>
+            <div class="hover-bg">
+                Read More
+            </div>
+            <div class="bp-title"><%= book.title %></div>
+        </div>
+        <% }) %>
+    </div>
 </div>
-<% }) %>

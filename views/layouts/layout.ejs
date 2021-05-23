@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/main.css" />
         <link
             href="https://unpkg.com/filepond/dist/filepond.css"
             rel="stylesheet"
@@ -37,7 +38,11 @@
     </head>
     <body>
         <%- include('../partials/header.ejs') %> 
-        <%- include('../partials/errorMessage.ejs') %> 
-        <%- body %>
+        <div class="container margin-b">
+            <%- include('../partials/errorMessage.ejs') %>
+            
+            <%- body %>
+        </div>
+        <%- include('../partials/footer.ejs') %> 
     </body>
 </html>

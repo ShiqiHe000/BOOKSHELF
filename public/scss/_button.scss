@@ -1,0 +1,66 @@
+$transition-time: 0.2s; 
+
+.btn {
+    background: none;
+    outline: none;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: $clr-pink;
+    color: black;
+    transition: background-color $transition-time ease-in-out;
+
+    &:hover {
+        background-color: lighten($clr-pink, 5%);
+    }
+
+    &:active {
+        border: 2px solid rgba($color: darken($clr-pink, 5%), $alpha: 0.8);
+    }
+}
+
+.btn-secondary {
+    background-color: $clr-grey;
+    color: black;
+    transition: background-color $transition-time ease-in-out;
+
+    &:hover {
+        background-color: lighten($clr-grey, 5%);
+    }
+
+    &:active {
+        border: 2px solid rgba($color: darken($clr-grey, 5%), $alpha: 0.8);
+    }
+}
+
+.btn-primary-outline {
+    border: 2px solid $clr-pink;
+    color: $clr-pink;
+    transition: color $transition-time ease-in-out,
+        background-color $transition-time ease-in-out;
+
+    &:hover {
+        background-color: $clr-pink;
+        color: black;
+    }
+}
+
+.btn-secondary-outline {
+    border: 2px solid $clr-grey;
+    color: $clr-grey;
+    transition: color $transition-time ease-in-out,
+        background-color $transition-time ease-in-out;
+
+    &:hover {
+        background-color: $clr-grey;
+        color: black;
+    }
+}

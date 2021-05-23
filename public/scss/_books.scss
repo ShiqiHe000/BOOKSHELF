@@ -1,0 +1,39 @@
+
+
+
+.books-page-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 3rem;
+    align-items: start;
+
+}
+
+
+
+.book-display {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.book-recommendation-title {
+    grid-column: 1 / -1;
+    margin: 0 auto;
+    color: $dark-grey;
+}
+
+.book-display-title {
+    margin: 0;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.book-display-cover {
+    width: $img-small-width;
+    height: $img-small-height;
+    object-fit: cover;
+    box-shadow: 0 0 5px 0 rgb(90, 89, 89);
+}
