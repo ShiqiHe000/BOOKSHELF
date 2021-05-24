@@ -11,32 +11,32 @@
             >
             <%- include('../partials/deleteForm.ejs', {url:
             `/books/${book._id}`, btnStyle: "btn btn-secondary"}) %>
-            <a href="/authors/<%= book.author._id %>" class="btn btn-primary">View Author</a>
+            <a href="/authors/<%= book.author._id %>" class="btn btn-primary"
+                >View Author</a
+            >
         </div>
     </div>
-    <div >
+    <div>
         <h2><%= book.title %></h2>
-        <div>
-            Author:
-            <span><%= book.author.name %> </span>
-        </div>
-        <div>
-            Publish Date:
-            <span>
+        <div class="info-grid">
+            <div>Author:</div>
+            <div><%= book.author.name %></div>
+            <div>Publish Date:</div>
+            <div>
                 <%= book.publishedDate.toLocaleDateString('en-US', {
                 weekday:'short', year: 'numeric', month: 'short', day: 'numeric'
                 }) %>
-            </span>
+            </div>
+
+            <div>Page Count:</div>
+            <div><%= book.pageCount %></div>
+
+            <div class="book-description">
+                Description:
+                <p><%= book.description %></p>
+            </div>
         </div>
 
-        <div>
-            Page Count:
-            <span><%= book.pageCount %> </span>
-        </div>
-
-        <div>
-            Description:
-            <p><%= book.description %></p>
-        </div>
+        
     </div>
 </div>

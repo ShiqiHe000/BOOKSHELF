@@ -23,3 +23,21 @@
     }
 }
 
+.info-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.2rem;
+    gap: 1rem;
+    
+    
+
+    .book-description {
+        grid-column: 1 / -1;
+
+        p {
+            font-size: 1rem;
+        }
+    }
+}
