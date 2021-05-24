@@ -34,7 +34,7 @@
         <h3 class="book-recommendation-title">Recommendations</h3>
         <% books.forEach(book => { %>
         <div>
-            <h6 class="book-display-title"><%= book.title %></h6>
+            <h5 class="book-display-title"><%= book.title %></h5>
             <a href="/books/<%= book._id %> ">
                 <img
                     src="<%= book.coverImagePath %>"
@@ -44,5 +44,8 @@
             </a>
         </div>
         <% }) %>
+        <% if(noBook) { %> 
+            <div>No result found.</div>
+        <% } %> 
     </div>
 </div>

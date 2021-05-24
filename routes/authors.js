@@ -10,12 +10,16 @@ const Book = require("../models/book");
 router.get("/", async (req, res) => {
     let searchOptions = {};
     if (req.query.name != null && req.query.name !== "") {
-        searchOptions.name = new RegExp(req.query.name, "i");
+        const searchName = req.query.name.trim();
+        searchOptions.name = new RegExp(searchName, "i");
     }
     try {
         const authors = await Author.find(searchOptions);
-        res.render("authors/index", { authors, searchOptions: req.query });
+        let noResult = false;
+        if(authors.length === 0) noResult = true;
+        res.render("authors/index", { authors, searchOptions: req.query, noResult });
     } catch (err) {
+        console.log(err);
         res.redirect(`/`); // back to home page
     }
 });

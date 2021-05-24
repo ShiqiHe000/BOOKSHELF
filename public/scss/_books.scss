@@ -1,12 +1,8 @@
-
-
-
 .books-page-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 3rem;
+    column-gap: 3rem;
     align-items: start;
-
 }
 
 
@@ -17,6 +13,9 @@
     justify-items: center;
     align-items: center;
     gap: 1rem;
+
+    max-height: 450px;
+    overflow: scroll;
 }
 
 .book-recommendation-title {
@@ -36,4 +35,19 @@
     height: $img-small-height;
     object-fit: cover;
     box-shadow: 0 0 5px 0 rgb(90, 89, 89);
+
+    transform: scale(1);
+    transition: transform .2s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+
+@media screen and (max-width: $break-large) {
+    .books-page-grid {
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+    }
 }

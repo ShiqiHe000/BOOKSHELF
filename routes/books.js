@@ -10,7 +10,8 @@ const imageMimeTypes = ["image/jpeg", "image/png", "image/gif"];
 router.get("/", async (req, res) => {
     let query = Book.find();
     if (req.query.title != null && req.query.title !== "") {
-        query = query.regex("title", new RegExp(req.query.title, "i"));
+        const searchName = req.query.title.trim();
+        query = query.regex("title", new RegExp(searchName, "i"));
     }
     //published before
     if (req.query.publishedBefore != null && req.query.publishedBefore !== "") {
@@ -21,8 +22,10 @@ router.get("/", async (req, res) => {
         query = query.gte("publishedDate", req.query.publishedAfter);
     }
     try {
-        const books = await query.exec();
-        res.render("books/index", { books, searchOptions: req.query });
+        const books = await query.sort({createAt: -1}).exec();
+        let noBook = false;
+        if (books.length === 0) noBook = true;
+        res.render("books/index", { books, searchOptions: req.query, noBook });
     } catch (err) {
         res.redirect("/");
     }

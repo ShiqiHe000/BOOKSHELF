@@ -1,4 +1,5 @@
 $transition-time: 0.2s; 
+$secondary-clr: #8080ff;
 
 .btn {
     background: none;
@@ -30,16 +31,16 @@ $transition-time: 0.2s;
 }
 
 .btn-secondary {
-    background-color: $clr-grey;
+    background-color: $secondary-clr;
     color: black;
     transition: background-color $transition-time ease-in-out;
 
     &:hover {
-        background-color: lighten($clr-grey, 5%);
+        background-color: lighten($secondary-clr, 5%);
     }
 
     &:active {
-        border: 2px solid rgba($color: darken($clr-grey, 5%), $alpha: 0.8);
+        border: 2px solid rgba($color: darken($secondary-clr, 5%), $alpha: 0.8);
     }
 }
 
@@ -56,13 +57,23 @@ $transition-time: 0.2s;
 }
 
 .btn-secondary-outline {
-    border: 2px solid $clr-grey;
-    color: $clr-grey;
+    border: 2px solid $secondary-clr;
+    color: $secondary-clr;
     transition: color $transition-time ease-in-out,
         background-color $transition-time ease-in-out;
 
     &:hover {
-        background-color: $clr-grey;
+        background-color: $secondary-clr;
         color: black;
+    }
+}
+
+.btn-horizontal-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    & > * {
+        margin-left: 1rem;
     }
 }

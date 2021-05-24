@@ -1,8 +1,13 @@
-
 .authors-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 3rem;
+    justify-content: space-between;
+}
+
+.author-list-control {
+    max-height: 300px;
+    overflow: scroll;
 }
 
 .each-author {
@@ -18,5 +23,14 @@
 }
 
 .button-l-space {
-    margin-left: .5rem;
+    margin-left: 0.5rem;
+}
+
+@media only screen and (max-width: 900px) {
+    .authors-grid {
+        grid-template-columns: 1fr;
+        justify-self: center;
+        align-items: center;
+        row-gap: 2rem;
+    }
 }

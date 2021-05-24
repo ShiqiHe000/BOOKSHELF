@@ -1,19 +1,22 @@
-<h2><%= author.name %></h2>
-<a href="/authors/<%= author._id %>/edit">Edit</a>
-<%- include('../partials/deleteForm.ejs', {url}) %> 
+<h1><%= author.name %></h1>
+<div class="author-buttons">
+    <a href="/authors/<%= author._id %>/edit" class="btn btn-primary">Edit</a>
+    <%- include('../partials/deleteForm.ejs', {url, btnStyle: "btn btn-secondary"}) %> 
 
-<h2>Book By Author</h2>
-<div>
+</div>
+
+<h3>Book By Author</h3>
+<div class="card card-bg book-row">
     <% books.forEach( book => { %>
-        <a href="/books/<%= book._id %>">
-
-            <img
-            src="<%= book.coverImagePath %> "
-            alt="author's books"
-            height="150"
-            width="100"
-            />
-        </a>
-        <div><%= book.title %></div>
+        <div>
+            <a href="/books/<%= book._id %>" class="authors-book-container">
+                
+                <img
+                src="<%= book.coverImagePath %> "
+                alt="author's books"
+                />
+            </a>
+            <div><%= book.title %></div>
+        </div>
     <% }) %>
 </div>

@@ -1,6 +1,11 @@
 <h2>New Book</h2>
+<div class="card">
+
 <form action="/books" method="POST">
     <%- include('./_form_fields.ejs') %> 
-    <a href="/books">Cancel</a>
-    <button type="submit">Create</button>
+    <div class="button-right-align">
+        <a href="/books" class="btn btn-secondary">Cancel</a>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
 </form>
+</div>

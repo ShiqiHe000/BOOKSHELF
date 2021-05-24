@@ -18,7 +18,13 @@ body {
 }
 
 html {
+    height: 100%;
+}
+
+body {
     min-height: 100%;
+    font-family: $font-classic;
+
     background-image: linear-gradient(
         to right,
         #eea2a2 0%,
@@ -27,13 +33,7 @@ html {
         #b49fda 79%,
         #7ac5d8 100%
     );
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-body {
-    min-height: 100%;
-    font-family: $font-classic;
+    // background-repeat: no-repeat;
 
     display: flex;
     flex-direction: column;
@@ -76,8 +76,17 @@ body {
 // show a specific book
 @import "showBook";
 
+// add book
+@import "addBook";
+
 // new author
 @import "newAuthor";
 
 // authors
 @import "authors";
+
+// edit author
+@import "editAuthor";
+
+// show author
+@import "showAuthor";
