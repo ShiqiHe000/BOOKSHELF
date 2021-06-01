@@ -10,6 +10,7 @@ A BOOKSHELF library for your reading adventure. Built with MVC design pattern.
 * Wed hosting: Heroku. 
 
 ### Front End
+* UI design: Figma. 
 * CSS/SASS for styling. 
 * HTML with view engine EJS.
 * Animations. 
